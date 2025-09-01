@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/everything.css"/>
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="nav">
+      <ul>
+        <li>
+          <div class="logo">
+            <h3 class="Logo">FixBook</h3>
+          </div>
+          <div class="links">
+            <a href="home.html">Home</a>
+            <a id="profileHTML" onclick="ProfileClicked()" style="cursor: pointer;">Profile</a>
+          </div>
+        </li>
+
+        <div class="buttons-sec">
+          <div class="user-inf-main-nav">
+            <img id="user-img-nav" src="imgs/user-img-self.png" alt="user information">
+            <h2 id="name-nav"></h2>
+            <h2 id="user-name-nav"></h2>
+          </div>
+
+          <button id="login">Login</button>
+          <button id="register">Register</button>
+          <button onclick="logout()" id="logOut">Log out</button>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Main User Information -->
+    <div class="main-user">
+        <div class="img-userInformation-posts-comment">
+            <div class="name-username-userImage">
+                <img id="Main-user-img" src="imgs/userName.png" alt="User Image" class="main-user-img">
+                <div class="name-username">
+                    <h2 id="mainEmail"></h2>
+                    <h2 id="mainName"></h2>
+                    <h2 id="mainUsername"></h2>
+                </div>
+            </div>
+
+            <div class="posts-comments">
+                <div class="post-card">
+                    <p class="number" id="numberPosts">0</p>
+                    <p class="label">Posts</p>
+                </div>
+                <div class="comment-card">
+                    <p class="number" id="numberComments">0</p>
+                    <p class="label">Comments</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 id="username-span" class="user-name-span"></h2>
+
+    <!-- Login Section -->
+    <div class="login-sec">
+      <div class="login-card">
+        <i id="loginExit" class="fa-solid fa-xmark"></i>
+        <h2>Login</h2>
+        <div id="loginForm">
+          <input type="text" id="userNameInput" placeholder="Username" required />
+          <input type="password" id="passwordInput" placeholder="Password" required />
+          <button type="submit" onclick="loginBtnClicked()" class="sumbit">Login</button>
+          <p class="register-link">Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Section -->
+    <div class="register-sec">
+      <div class="register-card">
+        <i id="registerExit" class="fa-solid fa-xmark"></i>
+        <h2>Register</h2>
+        <div id="registerForm">
+          <input type="text" id="registerNameInput" placeholder="Name" required />
+          <input type="text" id="registerUserNameInput" placeholder="Username" required />
+          <input type="email" id="registerEmailInput" placeholder="Email" required />
+          <input type="password" id="registerPasswordInput" placeholder="Password" required />
+          <input type="file" id="ProfileImageInput" accept=".jpg,.jpeg,.png" hidden required />
+          <label for="ProfileImageInput" class="custom-file-upload">Upload Profile Image</label>
+          <p id="CheckProfileimageInput" style="margin-top:8px; font-size:14px; color:#555;"></p>
+          <button type="submit" onclick="registerBtnClicked()" class="sumbit">Register</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Post Information -->
+
+    <h2 id="username-span" class="user-name-span"></h2>
+
+    <div class="main" id="ProfileMain" style="margin: 0;">
+      <div class="card">
+
+        <!-- Post Author Info -->
+        <div class="user-inf">
+          <div class="img-emailUser">
+            <img class="user-img" src="" alt="user icon">
+            <h5 class="user-name"></h5>
+          </div>
+        </div>
+        <hr>
+
+        <!-- Post Content -->
+        <div class="main-card">
+          <div class="background-image-noHere">
+            <div class="main-img create-comment">
+              <img src="" alt="main img">
+
+              <!-- Comment Input Box -->
+              <div class="create-comment-sec">
+                <input type="text" placeholder="Add a Comment">
+                <button>Send <i class="fa-solid fa-pencil"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Description -->
+          <div class="des-sec">
+            <div class="date">
+              <p class="date"></p>
+            </div>
+
+            <h2 class="title"></h2>
+            <h3></h3>
+          </div>
+
+          <!-- Comments Section -->
+          <div class="comments-sec">
+            <h2>(2) Comments <i class="fa-solid fa-comments"></i> 
+            </h2>
+
+            <div class="main-comments">
+              <!-- Single Comment -->
+              <div class="user-comment-inf">
+                <div class="user-profile">
+                  <img src="imgs/img23.jpeg" alt="user icon">
+                  <h5>shalabihisham2@gmail.com</h5>
+                </div>
+
+                <div class="main-comment">
+                  <h3>trum ipsa esse consectetur sapiente nemo quam officia hic repellat cupiditate, deleniti, error quisquam.</h3>
+                </div>
+              </div>
+              <!-- Add more comments below as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Post Section -->
+      <div class="editPost-sec">
+          <div class="editPost-card">
+            <i id="editPostExit" class="fa-solid fa-xmark"></i>
+            <h2>Edit Post</h2>
+            <div id="editPostForm">
+              <input type="text" id="editTitleInput" placeholder="Title" required />
+              <textarea id="editBodyInput" placeholder="Body"></textarea>
+              <input type="file" id="editImageInput" accept=".jpg,.jpeg,.png" hidden required />
+              <label for="editImageInput" class="custom-file-upload">Upload Image</label>
+              <p id="editFileName" style="margin-top:8px; font-size:14px; color:#555;"></p>
+              <button type="submit" onclick="EditPostBtnClicked()" class="sumbit">Edit</button>
+            </div>
+          </div>
+      </div>
+
+    <!-- Delete Post Section -->
+       
+    <!-- Messages / Notifications -->
+      <div class="deletePost">
+        <div>
+          <h2>Are You Sure?</h2>
+          <button>Yes</button>
+          <button>No</button>
+        </div>
+      </div>
+
+    <!-- Notifications for login success and logout success -->
+    <div class="complateLogin">
+      <i onclick="closeLogInLogOutMessage('logIn')" class="loginSuccX fa-solid fa-xmark"></i>
+      <h2>You have logged in successfully!</h2>
+      <div class="barTime"></div>
+    </div>
+
+    <div class="logOut">
+      <i onclick="closeLogInLogOutMessage('logOut')" class="logOutSuccX fa-solid fa-xmark"></i>
+      <h2>You have logged out successfully</h2>
+      <div class="redBarTime"></div>
+    </div>
+</div>
+
+<script src="js/mainLogic.js"></script>
+<script src="js/profileUser.js"></script>
+</body>
+</html>

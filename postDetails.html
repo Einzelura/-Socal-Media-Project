@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="css/everything.css"/>
+  <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="nav">
+      <ul>
+        <li>
+          <div class="logo">
+            <h3 class="Logo">FixBook</h3>
+          </div>
+          <div class="links">
+            <a href="home.html">Home</a>
+            <a id="profileHTML" onclick="ProfileClicked()" style="cursor: pointer;">Profile</a>
+          </div>
+        </li>
+
+        <div class="buttons-sec">
+          <div class="user-inf-main-nav">
+            <img id="user-img-nav" src="imgs/user-img-self.png" alt="user information">
+            <h2 id="name-nav"></h2>
+            <h2 id="user-name-nav"></h2>
+          </div>
+
+          <button id="login">Login</button>
+          <button id="register">Register</button>
+          <button onclick="logout()" id="logOut">Log out</button>
+        </div>
+      </ul>
+    </div>
+
+    <h2 id="username-span" class="user-name-span"></h2>
+    <div class="main"></div>
+
+    <!-- Login Section -->
+    <div class="login-sec">
+      <div class="login-card">
+        <i id="loginExit" class="fa-solid fa-xmark"></i>
+        <h2>Login</h2>
+        <div id="loginForm">
+          <input type="text" id="userNameInput" placeholder="Username" required />
+          <input type="password" id="passwordInput" placeholder="Password" required />
+          <button type="submit" onclick="loginBtnClicked()" class="sumbit">Login</button>
+          <p class="register-link">Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Section -->
+    <div class="register-sec">
+      <div class="register-card">
+        <i id="registerExit" class="fa-solid fa-xmark"></i>
+        <h2>Register</h2>
+        <div id="registerForm">
+          <input type="text" id="registerNameInput" placeholder="Name" required />
+          <input type="text" id="registerUserNameInput" placeholder="Username" required />
+          <input type="email" id="registerEmailInput" placeholder="Email" required />
+          <input type="password" id="registerPasswordInput" placeholder="Password" required />
+          <input type="file" id="ProfileImageInput" accept=".jpg,.jpeg,.png" hidden required />
+          <label for="ProfileImageInput" class="custom-file-upload">Upload Profile Image</label>
+          <p id="CheckProfileimageInput" style="margin-top:8px; font-size:14px; color:#555;"></p>
+          <button type="submit" onclick="registerBtnClicked()" class="sumbit">Register</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Notifications for login success and logout success -->
+    <div class="complateLogin">
+      <i onclick="closeLogInLogOutMessage('logIn')" class="loginSuccX fa-solid fa-xmark"></i>
+      <h2>You have logged in successfully!</h2>
+      <div class="barTime"></div>
+    </div>
+
+    <div class="logOut">
+      <i onclick="closeLogInLogOutMessage('logOut')" class="logOutSuccX fa-solid fa-xmark"></i>
+      <h2>You have logged out successfully</h2>
+      <div class="redBarTime"></div>
+    </div>
+</div>
+
+<script src="js/mainLogic.js"></script>
+<script src="js/postDetails.js"></script>
+</body>
+</html>

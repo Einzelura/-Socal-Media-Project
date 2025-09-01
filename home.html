@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <!-- CSS Style -->
+  <link rel="stylesheet" href="css/everything.css"/>
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
+  <!-- Axios JS -->
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Navigation Bar -->
+    <div class="nav">
+      <ul>
+        <li>
+          <div class="logo">
+            <h3 class="Logo">FixBook</h3>
+          </div>
+          <div class="links">
+            <a href="#">Home</a>
+            <a id="profileHTML" onclick="ProfileClicked()" style="cursor: pointer;">Profile</a>
+          </div>
+        </li>
+
+        <div class="buttons-sec">
+          <!-- User Info in Nav -->
+          <div class="user-inf-main-nav">
+            <img id="user-img-nav" src="imgs/user-img-self.png" alt="user information">
+            <h2 id="name-nav"></h2>
+            <h2 id="user-name-nav"></h2>
+          </div>
+
+          <!-- Nav Buttons -->
+          <button id="login">Login</button>
+          <button id="register">Register</button>
+          <button onclick="logout()" id="logOut">Log out</button>
+        </div>
+      </ul>
+    </div>
+
+    <div id="loader" class="main-loader">
+      <span class="loader"></span>
+    </div>
+
+    <!-- Main Post Section -->
+    <div class="main">
+      <div class="card">
+
+        <!-- Post Author Info -->
+        <div class="user-inf">
+          <img class="user-img" src="" alt="user icon">
+          <h5 class="user-name">shalabihisham2@gmail.com</h5>
+        </div>
+        <hr>
+
+        <!-- Post Content -->
+        <div class="main-card">
+          <div class="background-image-noHere">
+            <div class="main-img create-comment">
+              <img src="imgs/img14.jpg" alt="main img">
+
+              <!-- Comment Input Box -->
+              <div class="create-comment-sec">
+                <input type="text" placeholder="Add a Comment">
+                <button>Send <i class="fa-solid fa-pencil"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Description -->
+          <div class="des-sec">
+            <div class="date">
+              <p class="date">2 minute ago</p>
+            </div>
+
+            <h2 class="title">Lorem ipsum dolor sit amet.</h2>
+            <h3>Lorem Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga harum amet, dignissimos eveniet veniam quia! Similique ipsum, facilis quisquam eius asperiores reprehenderit corporis numquam sed adipisci placeat officia, nesciunt corrupti repellat! Illum eveniet quibusdam magnam, dolorum nobis modi accusamus ipsam distinctio ab. Accusantium, facilis rerum! Corporis, magnam provident accusamus veritatis quibusdam suscipit dolore natus aliquam officia, incidunt reprehenderit accusantium, quasi sunt. Ullam harum non reiciendis nam voluptates eaque ipsum natus ratione omnis quaerat aut quidem laboriosam possimus recusandae quis, aliquam amet hic excepturi iste soluta alias id. Praesentium, veniam et. Ipsum consequuntur pariatur officiis! Amet animi autem architecto enim asperiores tempore distinctio fugit, alias aperiam unde aspernatur. Consequatur, accusantium dolor est perferendis aperiam facere at suscipit accusamus nobis numquam. Est neque numquam deleniti quis hic. Iste obcaecati delectus architecto sed laboriosam ut iure incidunt! Et eveniet quo voluptatem laudantium, amet nemo architecto repellat, aliquam aut blanditiis expedita voluptates consequatur! Labore, maiores officiis. Est at assumenda eaque, consequatur necessitatibus quam ad corporis praesentium. Laborum, atque optio quasi quod architecto minima asperiores expedita exercitationem quaerat accusamus quos explicabo necessitatibus quae, ipsa aut nulla, praesentium quam autem libero nobis. Minus sunt minima doloribus, ullam quidem modi magni tenetur quod quas, sequi dolores, quam ex omnis fuga libero aspernatur! Eveniet a voluptas totam placeat praesentium non cumque! Qui officiis neque quia incidunt, officia aliquid sequi reprehenderit vero quibusdam nisi deserunt eligendi consectetur quasi, molestias nulla assumenda veniam beatae sit error. Obcaecati mollitia commodi nisi molestiae adipisci. Reiciendis minus obcaecati, magnam voluptatibus neque velit cumque sint vitae ratione nulla deleniti ducimus molestiae dolorum optio autem ex. In quidem debitis expedita similique veritatis ab numquam consequuntur voluptatum earum rem, sequi repellat unde voluptates dicta quos consequatur, deserunt aperiam dolorum dolores delectus dolor suscipit natus quisquam facilis? Possimus eos a sunt? Cum doloremque voluptatibus mollitia voluptates eveniet perspiciatis iusto, ad, et accusamus explicabo beatae dolor quaerat corrupti excepturi officiis, est rem error porro odio. Saepe quod deleniti dolorem nesciunt perferendis. Fugit debitis aspernatur recusandae rem corrupti explicabo obcaecati asperiores? ipsum dolor sit amet, consectetur adipisicing elit. Provident eos magnam ipsa, modi quo nihil consequuntur, doloremque id assumenda adipisci culpa voluptas dolores.</h3>
+          </div>
+
+          <!-- Comments Section -->
+          <div class="comments-sec">
+            <h2>(2) Comments <i class="fa-solid fa-comments"></i> 
+              <span class="post-tags">
+              </span>
+            </h2>
+
+            <div class="main-comments">
+              <!-- Single Comment -->
+              <div class="user-comment-inf">
+                <div class="user-profile">
+                  <img src="imgs/img23.jpeg" alt="user icon">
+                  <h5>shalabihisham2@gmail.com</h5>
+                  <p class="date">3 months ago</p>
+                </div>
+
+                <div class="main-comment">
+                  <h3>Lorem isicing elit. Ids cure dnam quas laborrum nam suscipiique nostrum ducimus modi aspernatur qui nulla placeat recusandae ipsum magnam, laborum dolor culpa? Dicta debitis, beatae repellat quidem vero hic repudiandae molestias excepturi architecto esse dolorum earum fugit, rem ab distinctio, fugiat et explicabo velit maxime doloribus atque! Debitis sit fuga, soluta qui quibusdam ex dolorem nobis quas recusandae id, animi officiis quis cupiditate? Quia, sint accusantium. sit amet consectetur adipisicing elit. Totam nostrum ipsa esse consectetur sapiente nemo quam officia hic repellat cupiditate, deleniti, error quisquam.</h3>
+                </div>
+              </div>
+              <!-- Add more comments below as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Login Section -->
+    <div class="login-sec">
+      <div class="login-card">
+        <i id="loginExit" class="fa-solid fa-xmark"></i>
+        <h2>Login</h2>
+        <div id="loginForm">
+          <input type="text" id="userNameInput" placeholder="Username" required />
+          <input type="password" id="passwordInput" placeholder="Password" required />
+          <button type="submit" onclick="loginBtnClicked()" class="sumbit">Login</button>
+          <p class="register-link">Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Register Section -->
+    <div class="register-sec">
+      <div class="register-card">
+        <i id="registerExit" class="fa-solid fa-xmark"></i>
+        <h2>Register</h2>
+        <div id="registerForm">
+          <input type="text" id="registerNameInput" placeholder="Name" required />
+          <input type="text" id="registerUserNameInput" placeholder="Username" required />
+          <input type="email" id="registerEmailInput" placeholder="Email" required />
+          <input type="password" id="registerPasswordInput" placeholder="Password" required />
+          <input type="file" id="ProfileImageInput" accept=".jpg,.jpeg,.png" hidden/>
+          <label for="ProfileImageInput" class="custom-file-upload">Upload Profile Image</label>
+          <p id="CheckProfileimageInput" style="margin-top:8px; font-size:14px; color:#555;"></p>
+          <button type="submit" onclick="registerBtnClicked()" class="sumbit">Register</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Notifications for login success and logout success -->
+    <div class="complateLogin">
+      <i onclick="closeLogInLogOutMessage('logIn')" class="loginSuccX fa-solid fa-xmark"></i>
+      <h2>You have logged in successfully!</h2>
+      <div class="barTime"></div>
+    </div>
+
+    <div class="logOut">
+      <i onclick="closeLogInLogOutMessage('logOut')" class="logOutSuccX fa-solid fa-xmark"></i>
+      <h2>You have logged out successfully</h2>
+      <div class="redBarTime"></div>
+    </div>
+    
+    <!-- Create Post Section -->
+    <div class="createPost-sec">
+      <div class="createPost-card">
+        <i id="createPostExit" class="fa-solid fa-xmark"></i>
+        <h2>Create Post</h2>
+        <div id="createPostForm">
+          <input type="text" id="titleInput" placeholder="Title" required />
+          <textarea id="bodyInput" placeholder="Body"></textarea>
+          <input type="file" id="ImageInput" accept=".jpg,.jpeg,.png" hidden required />
+          <label for="ImageInput" class="custom-file-upload">Upload Image</label>
+          <p id="fileName" style="margin-top:8px; font-size:14px; color:#555;"></p>
+          <button type="submit" onclick="CreatePostBtnClicked()" class="sumbit">Create</button>
+        </div>
+      </div>
+    </div>
+      <button class="add-post-btn"><i class="fa-solid fa-circle-plus"></i></button>
+      
+    <!-- Edit Post Section -->
+      <div class="editPost-sec">
+          <div class="editPost-card">
+            <i id="editPostExit" class="fa-solid fa-xmark"></i>
+            <h2>Edit Post</h2>
+            <div id="editPostForm">
+              <input type="text" id="editTitleInput" placeholder="Title" required />
+              <textarea id="editBodyInput" placeholder="Body"></textarea>
+              <input type="file" id="editImageInput" accept=".jpg,.jpeg,.png" hidden required />
+              <label for="editImageInput" class="custom-file-upload">Upload Image</label>
+              <p id="editFileName" style="margin-top:8px; font-size:14px; color:#555;"></p>
+              <button type="submit" onclick="EditPostBtnClicked()" class="sumbit">Edit</button>
+            </div>
+          </div>
+      </div>
+
+    <!-- Delete Post Section -->
+       
+    <!-- Messages / Notifications -->
+      <div class="deletePost">
+        <div>
+          <h2>Are You Sure?</h2>
+          <button>Yes</button>
+          <button>No</button>
+        </div>
+      </div>
+
+  </div>
+
+  <!-- Button To Go Up -->
+
+  <button class="to-go-up-btn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="js/home.js"></script>
+
+
+  </body>
+</html>
